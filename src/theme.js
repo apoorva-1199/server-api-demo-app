@@ -1,4 +1,4 @@
-const theme = {
+const customThemeJSON = {
     "illustration": {
         "illustrationError": "/app/assets/illustration-error.webp",
         "emptyNote": "/app/assets/empty-note.svg",
@@ -366,4 +366,4 @@ const theme = {
     }
 }
 
-export default theme;
+export default customThemeJSON;

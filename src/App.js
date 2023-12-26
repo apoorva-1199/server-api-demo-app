@@ -41,20 +41,21 @@ const styles = {
 
 const App = () => {
   return (
-    <div>
-      <div style={styles.main_header}>
-        <div style={styles.header}>
-          <div style={styles.navbar}>
-            <Link to="/" style={styles.nav_link}>
-              Home
-            </Link>
-            <Link to="/about" style={styles.nav_link}>
-              About
-            </Link>
-          </div>
-        </div>
-      </div>
+    // <div>
+    //   <div style={styles.main_header}>
+    //     <div style={styles.header}>
+    //       <div style={styles.navbar}>
+    //         <Link to="/" style={styles.nav_link}>
+    //           Home
+    //         </Link>
+    //         <Link to="/about" style={styles.nav_link}>
+    //           About
+    //         </Link>
+    //       </div>
+    //     </div>
+    //   </div>
 
+    <div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>

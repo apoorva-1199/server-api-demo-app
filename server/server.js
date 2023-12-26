@@ -3,6 +3,10 @@ import React from "react";
 import ReactDOMServer from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import App from "../src/App";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import customThemeJSON from "../src/theme";
+
+const theme = createTheme(customThemeJSON);
 
 const app = express();
 
@@ -11,7 +15,9 @@ app.get("/*", (req, res) => {
 
     const { pipe, abort: _abort } = ReactDOMServer.renderToPipeableStream(
         <StaticRouter location={req.url}>
-            <App />
+            <ThemeProvider theme={theme}>
+                <App />
+            </ThemeProvider>
         </StaticRouter>,
         {
             bootstrapScripts: entryPoint,
