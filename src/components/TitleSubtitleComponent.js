@@ -40,18 +40,16 @@ export default function TitleSubtitleComponent(props) {
                         </Box>
                     </Box>
                 </Box>
-                {subTitle && (
-                    <Box>
-                        <TypographySubtitle1
-                            data-tid={`text-pageSubTitle`}
-                            component={'h2'}
-                            variant={'subtitle2'}
-                            font-color={theme.palette.background.contrastText}
-                        >
-                            {subTitle.text}
-                        </TypographySubtitle1>
-                    </Box>
-                )}
+                <Box>
+                    <TypographySubtitle1
+                        data-tid={`text-pageSubTitle`}
+                        component={'h2'}
+                        variant={'subtitle2'}
+                        font-color={theme.palette.background.contrastText}
+                    >
+                        {subTitle.text}
+                    </TypographySubtitle1>
+                </Box>
             </Box>
         </>
     );

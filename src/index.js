@@ -7,7 +7,6 @@ import customThemeJSON from "../src/theme";
 
 const theme = createTheme(customThemeJSON);
 
-
 ReactDOM.hydrateRoot(
   document,
   <React.StrictMode>
