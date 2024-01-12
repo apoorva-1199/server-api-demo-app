@@ -1,5 +1,5 @@
-// import { ThemeProvider, createTheme } from '@mui/material/styles';
-// import customThemeJSON from "../src/theme";
+import { createTheme } from '@mui/material/styles';
+import customThemeJSON from "../src/theme";
 import express from "express";
 import path from "path";
 import fs from "fs";
@@ -8,7 +8,6 @@ import Helmet from "react-helmet";
 import { renderToString } from "react-dom/server";
 import { StaticRouter, matchPath } from "react-router-dom";
 import routeList from "../src/RouteList";
-//import App from "../src/App";
 import AppRoutes from '../src/Routes';
 
 const app = express();
@@ -18,12 +17,11 @@ app.use("/static", express.static(path.resolve("./build/static")));
 const distPath = path.resolve("./build");
 const indexPath = `${distPath}/index.html`;
 
-//const theme = createTheme(customThemeJSON);
+const theme = createTheme(customThemeJSON);
 
 
 app.get("/api/classDetails", (req, res) => {
     const classDetails = require("./jsons/classDetails");
-    console.log(classDetails);
     res.send(classDetails.default);
 });
 
@@ -55,7 +53,7 @@ app.get("*", (req, res) => {
         // we pass the data result into SSR on the StaticRouter context
         const ssr = (
             <StaticRouter context={context} location={req.url}>
-                <AppRoutes />
+                <AppRoutes theme={theme} />
             </StaticRouter>
         );
         const dom = renderToString(ssr);

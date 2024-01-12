@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import routes from "./RouteList";
 
-const AppRoutes = () => (
+const AppRoutes = (props) => (
     <div>
         <Switch>
             {routes.map(route => (

@@ -52,6 +52,7 @@ class HomeModule extends React.Component {
 
     render() {
         const { classDetails, loading } = this.state;
+        const { theme } = this.props;
 
         if (loading || !classDetails) {
             return <div>Loading...</div>;

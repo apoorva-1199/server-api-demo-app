@@ -12,7 +12,7 @@ ReactDOM.hydrateRoot(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <App />
+        <App theme={theme} />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode >

@@ -5,9 +5,10 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const { theme } = this.props;
     return (
       <Router>
-        <AppRoutes />
+        <AppRoutes theme={theme} />
       </Router>
     );
   }
